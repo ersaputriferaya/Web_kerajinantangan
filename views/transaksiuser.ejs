@@ -1,0 +1,141 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi</title>
+    <link rel="stylesheet" href="transaksi.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: poppins;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+</head>
+
+<body class="bg-stone-200" style="background-color: aliceblue;">
+    <br>
+    <br>
+    <header class="text-white">
+        <nav>
+            <div class="menu">
+                <ul class="nav__links">
+                    <li><a href="/bukaUser" style="text-decoration: none; color:white;">Home</a></li>
+                    <li><a href="/aboutUser" style="text-decoration: none; color:white;">About</a></li>
+                    <li><a href="/contactusUser" style="text-decoration: none; color:white;">Contact us</a></li>
+                    <li><a href="/transaksiuser" style="text-decoration: none; color:white;">Shop</a></li>
+                </ul>
+        </nav>
+    </header>
+    <br>
+    <h3 class="subJudul mb-3" id="shopPage" style="text-align: center; font-family: cursive;">Daftar Produk</h3>
+    <div class="album py-5 bg-light mb-5">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <% for (item of items) { %>
+                    <div class="col p-3">
+                        <div class="card" style="border-radius:10px;">
+                            <img width="295px" height="295px" src="<%= item.gambar %>">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <%= item.name %>
+                                </h4>
+                                <h6 class="card-title"> Rp. <%= item.harga %>
+                                </h6>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <a href="#formCheckout" class="w-30 btn btn-lg btn-primary"
+                                        style="background-color: #3C6E71; font-size: 15px; border: transparent; font-family: cursive;">
+                                        Beli Sekarang
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+            <br><br>
+            <hr>
+            <form action="/items/transaksiuser" method="post" id="formCheckout" style="margin-left: 320px;">
+                <h3 class="subJudul mt-5 mb-4" id="projectPage" style="font-family: cursive;">Form Pembelian</h3>
+                <div class="flex items-center">
+                    <select name="type" class="w-1/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+                        <option value="dibeli">Dibeli</option>
+                    </select>
+                    <select placeholder="Paket Item" name="item_id"
+                        class="w-2/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+                        <% for (item of items) { %>
+                            <option value="<%= item.id %>">
+                                <%= item.name %> 
+                            </option>
+                            <% } %>
+                    </select>
+                    <input type="number" name="amount" value="0"
+                        class="w-1/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+                    <button class="w-30 btn btn-lg btn-primary"
+                        style="background-color: #76BA99; font-size: 15px; border: transparent; font-family: cursive;">
+                        Checkout
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

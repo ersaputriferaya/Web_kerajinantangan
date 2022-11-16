@@ -1,0 +1,215 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi</title>
+    <link rel="stylesheet" href="transaksi.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: poppins;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+
+    <!-- Ini Custom styles for this template -->
+    <link href="/blog.css" rel="stylesheet">
+</head>
+
+<body class="bg-stone-200" style="background-color: aliceblue;">
+    <br>
+    <br>
+    <header class="text-white">
+        <nav>
+            <div class="menu">
+                <ul class="nav__links">
+                    <!-- <li><a href="/buka" style="text-decoration: none; color:white;">Home</a></li> -->
+                    <li><a href="/about" style="text-decoration: none; color:white;">Data Input</a></li>
+                    <li><a href="/transaksiadmin" style="text-decoration: none; color:white;">Shop</a></li>
+                </ul>
+        </nav>
+    </header>
+    <br>
+    <main class="container">
+        <div class="p-4 p-md-5 mb-3 flex" id="bioPage" style="background-color: #A0E4CB; border-radius: 2% ;">
+            <h3 class="subJudul mb-5 text-center" id="coursePage" style="font-family: cursive;">Transaksi</h3>
+
+            <form action="/items/tambahadmin" method="post">
+                <div class="p-4 mt-4 bg-white shadow-lg">
+                    <h4 class="subJudul mb-4 mt-2" id="coursePage" style="font-family: cursive;">Tambah Item</h4>
+
+                    <div class="form">
+                        <p style="font-family: cursive;">Nama Produk</p>
+                        <input type="text" name="name" class="form-control mb-3" placeholder="Nama" required>
+                    </div>
+
+                    <div class="form">
+                        <p style="font-family: cursive;">Harga Produk</p>
+                        <input type="text" name="harga" class="form-control mb-3" placeholder="Harga" required>
+                    </div>
+
+                    <div class="form">
+                        <p style="font-family: cursive;">Gambar Produk</p>
+                        <input type="file" name="gambar" class="form-control mb-4" required>
+                    </div>
+
+                    <button class="w-100 btn btn-lg btn-primary"
+                        style="background-color: #76BA99; border: transparent; font-family: cursive;" type="submit">
+                        Tambah
+                    </button>
+                </div>
+            </form>
+
+            <section class="p-4 mt-4 bg-white shadow-lg">
+                <h4 class="subJudul mb-3" id="coursePage" style="font-family: cursive;">Transaksi Item</h4>
+                <form action="/items/transaksiadmin" method="post">
+                    <div class="flex items-center">
+                        <select name="type" class="w-1/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+                            <option value="masuk">Stok Masuk</option>
+                            <option value="ditarik">Stok Ditarik</option>
+                        </select>
+                        <select placeholder="Paket Item" name="item_id"
+                            class="w-2/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+                            <% for (item of items) { %>
+                                <option value="<%= item.id %>">
+                                    <%= item.name %>
+                                </option>
+                                <% } %>
+                        </select>
+                        <input type="number" name="amount" value="0"
+                            class="w-1/5 w-full border px-3 py-2 text-sm mr-2 bg-white">
+                        <button
+                            class="w-1/5 bg-slate-500 text-white px-3 py-2 border text-sm font-bold tracking-widest hover:bg-slate-600"
+                            style="background-color: #76BA99; border: transparent; font-family: cursive;">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+
+            <section class="p-4 mt-4 bg-white shadow-lg">
+                <h4 class="subJudul mb-3" id="coursePage" style="font-family: cursive;">List Item</h4>
+                <table class="border" cellpadding="10">
+                    <ul>
+                        <tr>
+                            <th class="border" style="font-family: cursive;"> Nama Item </th>
+                            <th class="border" style="font-family: cursive;"> Harga Item</th>
+                            <th class="border" style="font-family: cursive;"> Stok Item</th>
+                            <th class="border" style="font-family: cursive;"> Gambar Item</th>
+                            <th class="border" style="font-family: cursive;"> Status Item </th>
+                            <th class="border" style="font-family: cursive;"> Update Status </th>
+                        </tr>
+                        <% for (item of items) { %>
+                            <tr>
+                                <th class="border">
+                                    <%= item.name %>
+                                </th>
+                                <th class="border"> Rp.<%= item.harga %>
+                                </th>
+                                <th class="border">
+                                    <%= item.qty %> pcs
+                                </th>
+                                <th class="border"><img width="100px" height="100px" src="<%= item.gambar %>"></th>
+                                <th class="border">
+                                    <%= item.status %>
+                                </th>
+                                <th class="border"><button style="background-color: #76BA99; border: 1px; border-radius: 10px;"><a href="/updateItem/<%= item.id %>" style="text-decoration: none; color: white">Update</a></button></th>
+                            </tr>
+                            <% } %>
+                    </ul>
+                </table>
+            </section>
+
+            <section class="p-4 mt-4 bg-white shadow-lg">
+                <h4 class="subJudul mb-3" id="coursePage" style="font-family: cursive;">Pembukuan</h4>
+                <table class="border" cellpadding="10">
+                    <ul>
+                        <tr>
+                            <th class="border" style="font-family: cursive;"> Tipe </th>
+                            <th class="border" style="font-family: cursive;"> Nama Item </th>
+                            <th class="border" style="font-family: cursive;"> Jumlah </th>
+                            <th class="border" style="font-family: cursive;"> Waktu </th>
+                        </tr>
+                        <% for (log of pembukuan) { %>
+                            <tr>
+                                <th class="border">
+                                    <%= log.type %>
+                                </th>
+                                <th class="border">
+                                    <%= items.find(item=> item.id === log.item_id).name %>
+                                </th>
+                                <th class="border">
+                                    <%= log.amount %> pcs
+                                </th>
+                                <th class="border">
+                                    <%= log.create_time%>
+                                </th>
+                            </tr>
+                            <% } %>
+                    </ul>
+                </table>
+            </section>
+
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+        fieldset{
+            width: 200px;
+            height: 350px;
+            margin-left: 550px;
+            background-color: #A5F1E9;
+        }
+        button{
+            background-color: aquamarine;
+            border-radius: 10px;
+            padding: 4px 20px;
+            font-family: cursive;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data</title>
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <legend>
+        <fieldset>
+            <h1 align="center">Edit Data</h1>
+            <form action="/edit/<%= user.id %>" method="post"">
+                <div align="center"><span>Nama : </span><input type="text" name="nama" value="<%= user.nama %>"></div>
+                <br>
+                <div align="center"><span>Email : </span><input type="text" name="email" value="<%= user.email %>"></div>
+                <br>
+                <div align="center"><span>Password : </span><input type="text" name="password" value="<%= user.password %>"></div>
+                <br><br>
+                <div align="center"><button>Edit</button></div>
+            </form>
+    </legend>
+    </fieldset>
+</body>
+
+</html>

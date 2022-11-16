@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <form action="/login" method="post" id="form">
+
+            <fieldset align="center">
+
+
+                <legend align="center">Login</legend>
+
+                <br>
+                <p>
+                    <!-- <label><br> Email : </label> -->
+                    <input type="text" name="email" placeholder="Masukkan Email" required
+                        style="width: 200px; height: 25px;">
+                </p>
+
+                <p>
+                    <input type="password" name="password" id="inputPassword" placeholder="Masukkan Password" required
+                        style="width: 200px; height: 25px">
+                    <br><br>
+                    <input type="checkbox" onclick="myFunction()">Tampilkan Password
+
+                    <script>
+                        function myFunction() {
+                            var x = document.getElementById("inputPassword");
+                            if (x.type === "password") {
+                                x.type = "text";
+                            } else {
+                                x.type = "password";
+                            }
+                        }
+                    </script>
+
+                    <br>
+                    <br>
+                    <br>
+                    <button onclick="login()" class="button" value="Login">Login</button>
+                </p>
+
+                <script>
+                    function login() {
+                        var email = document.forms["form"]["email"].value;
+                        var password = document.forms["form"]["password"].value;
+                        if (email == "ersa29putri@gmail.com" && password == "12345") {
+                            alert("Anda berhasil Login!");
+                        } 
+                        else if(email == "yeyen@gmail.com" && password == "12345"){
+                            alert("Anda berhasil Login!");
+                        }
+                        else if(email == "ratih@gmail.com" && password == "123"){
+                            alert("Anda berhasil Login!");
+                        }
+                        else {
+                            alert("Email atau password yang Anda masukkan salah!");
+                            return false;
+                        }
+                    } 
+                </script>
+            </fieldset>
+
+        </form>
+</body>
+
+</html>

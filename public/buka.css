@@ -1,0 +1,119 @@
+body {
+    background-color: aliceblue;
+}
+
+h1 {
+    font-family: cursive;
+    margin: 30px;
+    font-size: 70px;
+    color:#66BFBF;
+    background-color: antiquewhite;
+    width: 500px;
+    margin-left: 380px;
+}
+
+a {
+    margin: 0;
+    font-size: 20px;
+    color: black;
+}
+
+legend {
+    font-family: cursive;
+    font-size: 20px;
+}
+
+h2 {
+    font-family: cursive;
+    font-size: 20px;
+}
+
+.menu {
+    margin: 0;
+    width: 100%;
+    position: sticky;
+}
+
+nav {
+    width: 100%;
+    height: 30px;
+}
+
+ul.nav__links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #66BFBF;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    color: black;
+    font-size: 25px;
+    margin: 12px;
+    text-decoration: none;
+}
+
+a {
+    margin: 30px;
+    font-size: 20px;
+    font-family: cursive;
+    color: white;
+}
+
+h4 {
+    font-size: 25px;
+    font-family: cursive;
+    color: #66BFBF;
+}
+
+h3 {
+    font-size: 30px;
+    font-family: cursive;
+    color: #76BA99;
+    background-color: antiquewhite;
+    width: 200px;
+    margin-left: 530px;
+}
+
+/* .container{
+    width: 350px;
+    height: 350px;
+    background:#76BA99;
+} */
+
+#header{
+    background: url("https://img.freepik.com/free-photo/top-view-origami-craft-paint-tube-paintbrush-straw-colored-paper_23-2148188422.jpg?w=996&t=st=1667694022~exp=1667694622~hmac=c135e19f6fddcc8cb5b4eed824cba40c1e04197f93913441e898043471a3a042");
+    background-size: cover;
+    height: 110vh;
+    background-position: center;
+    -webkit-filter: brightness(55%);
+}
+
+button{
+    font-family: cursive;
+    background-color: #A5F1E9;
+    outline: none;
+    border-radius: 7px;
+}
+
+.nav__links{
+    list-style: none;
+}
+
+.nav__links li{
+    display: inline-block;
+    padding: 0px 0px;
+}
+
+.nav__links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover{
+    color: #CDFCF6;
+}

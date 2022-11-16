@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi</title>
+    <link rel="stylesheet" href="registrasi.css">
+</head>
+
+<body>
+    <br>
+    <td> <a href="/home" target="_blank" rel="nofollow"><img
+                src="https://cdn-icons-png.flaticon.com/128/2099/2099238.png" alt="Deskripsi Gambar"
+                title="Deskripsi Gambar" width="30" height="35" style="float: left;" />
+        </a> </td>
+    <br>
+    <br>
+    <hr>
+
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <form action="/registrasi" method="post">
+
+            <fieldset align="center">
+
+
+                <legend align="center">Registrasi</legend>
+
+                <br>
+
+                <p>
+
+                    <!-- <label><br> Nama : </label> -->
+                    <input type="text" name="nama" placeholder="Masukkan Nama" required
+                        style="width: 200px; height: 25px;">
+                </p>
+
+                <p>
+                    <!-- <label><br> Email : </label> -->
+                    <input type="text" name="email" placeholder="Masukkan Email" required
+                        style="width: 200px; height: 25px;">
+                </p>
+
+                <p>
+                    <input type="password" name="password" id="inputPassword" placeholder="Masukkan Password" required
+                        style="width: 200px; height: 25px">
+                    <br><br>
+                    <input type="checkbox" onclick="myFunction()">Tampilkan Password
+
+                    <script>
+                        function myFunction() {
+                            var x = document.getElementById("inputPassword");
+                            if (x.type === "password") {
+                                x.type = "text";
+                            } else {
+                                x.type = "password";
+                            }
+                        }
+                    </script>
+
+                    <br>
+                    <br>
+                    <br>
+                    <button class="button">Register</button>
+                    <button class="button"><a href="/login" style="text-decoration: none; color: white;">Login</a></button>
+                </p>
+            </fieldset>
+
+        </form>
+</body>
+
+</html>

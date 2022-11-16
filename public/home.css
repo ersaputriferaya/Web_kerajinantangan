@@ -1,0 +1,96 @@
+body {
+    background-image: url("https://i.pinimg.com/474x/59/84/07/598407d5a56a65adebadbe6e791d797e.jpg");
+}
+
+h1 {
+    color: cadetblue;
+    font-family: cursive;
+    font-size: 50px;
+}
+
+h3 {
+    color: #876445;
+    font-size: 25px;
+    font-family: cursive;
+}
+
+h4 {
+    font-size: 18px;
+    font-family: cursive;
+}
+
+.menu {
+    margin: 0;
+    width: 100%;
+    position: sticky;
+}
+
+nav {
+    width: 20%;
+    height: 400px;
+    background: #76BA99;
+}
+
+ul.horizontal {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #32baba;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    color: black;
+    font-size: 25px;
+    margin: 12px;
+    text-decoration: none;
+}
+
+a {
+    margin: 30px;
+    font-size: 20px;
+    font-family: cursive;
+    color: white;
+    /* background:#66BFBF; */
+    text-decoration: none;
+}
+
+img {
+    margin: 120px;
+}
+
+h5 {
+    color: white;
+    font-size: 40px;
+    margin: 12px;
+    font-family: cursive;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #66BFBF;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 7px #999;
+    margin-left: 120px;
+    margin-bottom: 30px;
+  }
+  
+  .button:hover {background-color:aquamarine}
+  
+  .button:active {
+    background-color: cadetblue;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
